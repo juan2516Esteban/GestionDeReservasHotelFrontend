@@ -1,0 +1,103 @@
+  
+  <mat-stepper linear #stepper>
+    <mat-step [stepControl]="FormGroup1" [editable]="true">
+      <form [formGroup]="FormGroup1">
+        <ng-template matStepLabel>RoomID</ng-template>
+        <mat-form-field>
+          <mat-label>Codigo de habitación</mat-label>
+          <input matInput formControlName="idDeHabitacion" placeholder="Last name, First name" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="FormGroup2" [editable]="true">
+      <form [formGroup]="FormGroup2">
+        <ng-template matStepLabel>NumBaños</ng-template>
+        <mat-form-field>
+          <mat-label>Numero de baños</mat-label>
+          <input matInput formControlName="numeroDeBaños" placeholder="Ex. 1 Main St, New York, NY"
+                 required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="FormGroup3" [editable]="true">
+        <form [formGroup]="FormGroup3">
+          <ng-template matStepLabel>CapacidadHab</ng-template>
+          <mat-form-field>
+            <mat-label>Capacidad de habitación</mat-label>
+            <input matInput formControlName="capacidadDeHabitacion" placeholder="Ex. 1 Main St, New York, NY"
+                   required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="FormGroup4" [editable]="true">
+        <form [formGroup]="FormGroup4">
+          <ng-template matStepLabel>NumCamas</ng-template>
+          <mat-form-field>
+            <mat-label>Numero de camas</mat-label>
+            <input matInput formControlName="numeroDeCamas" placeholder="Ex. 1 Main St, New York, NY"
+                   required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="FormGroup5" [editable]="true">
+        <form [formGroup]="FormGroup5">
+          <ng-template matStepLabel>Cocina</ng-template>
+          
+            <mat-form-field class="custom-mat-form-field" >
+                <mat-label>Cocina</mat-label>
+                <mat-select formControlName="cocina" disableRipple>
+                  <mat-option value="true">True</mat-option >
+                  <mat-option value="false">False</mat-option >
+                </mat-select> 
+            </mat-form-field>  
+         
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="FormGroup6" [editable]="true">
+        <form [formGroup]="FormGroup6">
+          <ng-template matStepLabel>Precio</ng-template>
+          <mat-form-field>
+            <mat-label>Precio</mat-label>
+            <input matInput formControlName="precio"  [(ngModel)]="valorNumerico" placeholder="Ingrese solo números"
+               required>
+          </mat-form-field>
+          <p>El precio de la habitación sera de: {{ valorNumerico | pipePrecio }}</p>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Completado</ng-template>
+      <p>Por favor verifica los datos ingresados anteriormente,
+         recuerda que todavia los puedes modificar.</p>
+      <div class="example">
+        <button mat-button matStepperPrevious>Back</button>
+        <div class="example-button-row">
+            <button mat-raised-button color="primary">Primary</button>
+          </div>
+      </div>
+    </mat-step>
+  </mat-stepper>
+  
+  

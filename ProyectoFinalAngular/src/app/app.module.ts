@@ -10,12 +10,25 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
-import { RegistroUserComponent } from './registroUser/registro-user/registro-user.component';
+import { RegistroUserComponent } from './registroUser/registro-user.component';
 import { MatSelectModule } from '@angular/material/select';
 import { InputMaskModule } from 'primeng/inputmask';
+import { CrearHotelComponent } from './moduloAdministrador/crear-hotel/crear-hotel.component';
+import { CrearHabitacionComponent } from './moduloAdministrador/crearHabitacion/crear-habitacion.component';
+import { MatStepperModule } from '@angular/material/stepper';
+import { PipePrecioPipe } from './Pipes/pipePrecio/pipe-precio.pipe';
+import { PaginaPrincipalComponent } from './paginaPrincipal/pagina-principal/pagina-principal.component';
 
 @NgModule({
-  declarations: [AppComponent, IniciarSesionComponent, RegistroUserComponent],
+  declarations: [
+    AppComponent,
+    IniciarSesionComponent,
+    RegistroUserComponent,
+    CrearHotelComponent,
+    CrearHabitacionComponent,
+    PipePrecioPipe,
+    PaginaPrincipalComponent,
+  ],
   imports: [
     FormsModule,
     ReactiveFormsModule,
@@ -29,6 +42,7 @@ import { InputMaskModule } from 'primeng/inputmask';
     HttpClientModule,
     MatSelectModule,
     InputMaskModule,
+    MatStepperModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

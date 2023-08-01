@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { UserServiceService } from 'src/app/Service/user-service.service';
-import { User } from 'src/app/Web/Models/user';
+import { UserServiceService } from 'src/app/Service/userService/user-service.service';
+import { User } from 'src/app/Web/Models/modelUser/user';
 
 @Component({
   selector: 'app-registro-user',
@@ -35,6 +35,7 @@ export class RegistroUserComponent {
     telefono: new FormControl('', [
       Validators.required,
       Validators.minLength(10),
+      Validators.maxLength(10),
     ]),
     tipoDeDocumento: new FormControl('', [Validators.required]),
   });
