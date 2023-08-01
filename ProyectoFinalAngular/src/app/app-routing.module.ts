@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { IniciarSesionComponent } from './iniciarSesion/iniciar-sesion/iniciar-sesion.component';
-import { RegistroUserComponent } from './registroUser/registro-user/registro-user.component';
+import { RegistroUserComponent } from './registroUser/registro-user.component';
+import { CrearHotelComponent } from './moduloAdministrador/crear-hotel/crear-hotel.component';
+import { CrearHabitacionComponent } from './moduloAdministrador/crearHabitacion/crear-habitacion.component';
 
 const routes: Routes = [
   {
@@ -11,6 +13,14 @@ const routes: Routes = [
   {
     path: 'signUp',
     component: RegistroUserComponent,
+  },
+  {
+    path: 'createHotel',
+    component: CrearHotelComponent,
+  },
+  {
+    path: 'createRoom',
+    component: CrearHabitacionComponent,
   },
 ];
 
