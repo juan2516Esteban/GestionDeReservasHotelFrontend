@@ -14,4 +14,8 @@ export class HotelServiceService {
   public crearHotel(hotel: Hotel) {
     return this.http.post(this.urlHotel + '/crearHotel', hotel);
   }
+
+  public obtenerHoteles() {
+    return this.http.get(this.urlHotel + '/obtenerHoteles');
+  }
 }

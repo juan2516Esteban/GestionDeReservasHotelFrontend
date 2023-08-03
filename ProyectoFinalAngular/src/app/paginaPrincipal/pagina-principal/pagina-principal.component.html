@@ -1,1 +1,45 @@
-<p>pagina-principal works!</p>
+<h1>Visualización de hoteles</h1>
+
+
+<p-card *ngFor="let item of paginatedHoteles" header={{item.nombreHotel}} >
+    
+    <p class="m-0">
+        <samp>
+        Dirección:
+        </samp>
+       {{item.direccion}}
+    </p>
+    <p class="m-0">
+        <samp>
+        Numero de habitaciones:
+        </samp>
+       {{item.numeroDeHabitaciones}}
+    </p>
+    <p class="m-0">
+        <samp>
+        Capacidad de reservas:
+        </samp>
+       {{item.capacidadDeReservas}}
+    </p>
+    <p class="m-0">
+        <samp>
+        Telefono:
+        </samp>
+       {{item.telefono}}
+    </p>
+    <p class="m-0">
+        <samp>
+            Correo electronico:
+        </samp>
+       {{item.correoElectronico}}
+    </p>
+</p-card>
+
+<mat-paginator [length]="hoteles.length"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="pageSizeOptions"
+              aria-label="Select page"
+              (page)="onPageChange($event)">
+</mat-paginator>
+
+

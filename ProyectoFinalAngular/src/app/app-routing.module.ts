@@ -4,6 +4,7 @@ import { IniciarSesionComponent } from './iniciarSesion/iniciar-sesion/iniciar-s
 import { RegistroUserComponent } from './registroUser/registro-user.component';
 import { CrearHotelComponent } from './moduloAdministrador/crear-hotel/crear-hotel.component';
 import { CrearHabitacionComponent } from './moduloAdministrador/crearHabitacion/crear-habitacion.component';
+import { PaginaPrincipalComponent } from './paginaPrincipal/pagina-principal/pagina-principal.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'createRoom',
     component: CrearHabitacionComponent,
+  },
+  {
+    path: 'paginaPrincipal',
+    component: PaginaPrincipalComponent,
   },
 ];
 

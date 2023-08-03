@@ -18,6 +18,8 @@ import { CrearHabitacionComponent } from './moduloAdministrador/crearHabitacion/
 import { MatStepperModule } from '@angular/material/stepper';
 import { PipePrecioPipe } from './Pipes/pipePrecio/pipe-precio.pipe';
 import { PaginaPrincipalComponent } from './paginaPrincipal/pagina-principal/pagina-principal.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { CardModule } from 'primeng/card';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { PaginaPrincipalComponent } from './paginaPrincipal/pagina-principal/pag
     MatSelectModule,
     InputMaskModule,
     MatStepperModule,
+    MatPaginatorModule,
+    CardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
