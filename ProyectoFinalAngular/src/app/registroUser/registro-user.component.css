@@ -1,8 +1,17 @@
 .example-card {
     max-width: 700px;
-    background-color: gainsboro;
+    background-color: #375E97;
     margin-bottom: 30px;
     border-radius: 15px;
+  }
+
+  .example-card button{
+    background-color:  #39A18A;
+    color: black;
+  }
+
+  mat-icon{
+    color: #375E97;   
   }
 
   mat-card {
@@ -44,4 +53,27 @@ mat-form-field{
   margin-bottom: 30px;
   max-width: 250px;
 }
+
+p{
+  display: flex;
+  justify-content: center;
+}
+
+mat-card-content{
+  margin-bottom: 15px;
+}
+
+a{
+  text-decoration: none;
+  font-weight: bold;
+  size: 25px;
+  color: black;
+  margin-left: 8px;
+}
+
+.font-bold{
+  font-weight: bold;
+}
+
+
 

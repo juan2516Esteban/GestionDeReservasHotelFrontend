@@ -1,15 +1,18 @@
 <mat-card class="example-card">
 
     <mat-card-header>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      <mat-card-title>Crea tu cuenta de trivago</mat-card-title>
+      <mat-card-subtitle>solo llenado estos simples datos 
+        ya tendras acceso a todos nuestros servicios
+      </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
 
         <mat-form-field class="example-form-field" [formGroup]="registerUser">
             <mat-label>Nombre Completo</mat-label>
             <input matInput type="text" formControlName="nombre">
-            <button *ngIf="registerUser.get('nombre')?.value" matSuffix mat-icon-button aria-label="Clear" 
+            <button style="background-color: transparent;" 
+            *ngIf="registerUser.get('nombre')?.value" matSuffix mat-icon-button aria-label="Clear" 
             (click)="registerUser.get('nombre')?.setValue('')">
               <mat-icon>close</mat-icon>
             </button>
@@ -18,7 +21,8 @@
           <mat-form-field class="example-form-field" [formGroup]="registerUser">
             <mat-label>Correo Electronito</mat-label>
             <input matInput type="text" placeholder="Ex.pat@example.com" formControlName="correoElectronico">
-            <button *ngIf="registerUser.get('correoElectronico')?.value" matSuffix mat-icon-button aria-label="Clear" 
+            <button style="background-color: transparent;" 
+            *ngIf="registerUser.get('correoElectronico')?.value" matSuffix mat-icon-button aria-label="Clear" 
             (click)="registerUser.get('correoElectronico')?.setValue('')">
               <mat-icon>close</mat-icon>
             </button>
@@ -27,7 +31,8 @@
           <mat-form-field class="example-form-field" [formGroup]="registerUser">
             <mat-label>Contraseña</mat-label>
             <input matInput type="password" formControlName="contrasena">
-            <button *ngIf="registerUser.get('contrasena')?.value" matSuffix mat-icon-button aria-label="Clear" 
+            <button style="background-color: transparent;" 
+            *ngIf="registerUser.get('contrasena')?.value" matSuffix mat-icon-button aria-label="Clear" 
             (click)="registerUser.get('contrasena')?.setValue('')">
               <mat-icon>close</mat-icon>
             </button>
@@ -52,15 +57,18 @@
         
               <div class="card p-fluid flex flex-wrap gap-3">
                   <div class="flex-auto">
-                      <span class="font-bold block mb-2">Telefono</span>
+                      <span class="font-bold block mb-2" >Telefono</span>
                       <p-inputMask mask="(999) 999-9999" placeholder="(999) 999-9999"
-                      formControlName="telefono" ></p-inputMask>
+                      formControlName="telefono"></p-inputMask>
                   </div>
               </div>
 
             </form>
         
-        <p>{{longText}}</p>
+        <p>
+          ¿Ya tienes cuenta? por aca puedes ingresar:
+          <a [routerLink]="['/loggin']">Iniciar sesion</a>
+        </p>
     </mat-card-content>
     <mat-card-actions>
       <button mat-button type="submit" (click)="enviarFormulario()" [disabled]="registerUser.invalid">Registrate</button>
