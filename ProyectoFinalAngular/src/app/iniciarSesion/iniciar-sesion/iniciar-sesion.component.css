@@ -18,6 +18,11 @@ mat-card {
     margin-top: 30px;
   }
 
+  .error{
+    color: red;
+    font-size: 12px;
+  }
+
   mat-card-subtitle{
     color: black;
   }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserServiceService } from 'src/app/Service/userService/user-service.service';
 import { User } from 'src/app/Web/Models/modelUser/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro-user',
@@ -9,7 +10,7 @@ import { User } from 'src/app/Web/Models/modelUser/user';
   styleUrls: ['./registro-user.component.css'],
 })
 export class RegistroUserComponent {
-  constructor(private service: UserServiceService) {}
+  constructor(private service: UserServiceService, private router: Router) {}
 
   longText = `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog
   from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
@@ -30,19 +31,19 @@ export class RegistroUserComponent {
     ]),
     documento: new FormControl('', [
       Validators.required,
-      Validators.minLength(7),
+      Validators.minLength(8),
+      Validators.maxLength(10),
     ]),
     telefono: new FormControl('', [
       Validators.required,
       Validators.minLength(10),
-      Validators.maxLength(10),
     ]),
     tipoDeDocumento: new FormControl('', [Validators.required]),
   });
 
+  /* funcion para enviar los datos al servicio 
+  y guardar el usuario*/
   public enviarFormulario() {
-    this.obtenerSelector();
-
     let user: User = {
       name: this.registerUser.value.nombre || '',
       correoElectronico: this.registerUser.value.correoElectronico || '',
@@ -53,20 +54,12 @@ export class RegistroUserComponent {
     };
     this.service.crearUsuario(user).subscribe((Respuesta: any) => {
       this.responseRegistro = Respuesta;
-      this.mostrarResponse();
+      this.enviarloggin();
     });
   }
 
-  public obtenerSelector() {
-    if (this.registerUser.value.tipoDeDocumento == '2') {
-      this.registerUser.value.tipoDeDocumento = 'CC';
-    } else if (this.registerUser.value.tipoDeDocumento == '1') {
-      this.registerUser.value.tipoDeDocumento = 'TI';
-    }
-  }
-
-  public mostrarResponse() {
-    console.log(this.responseRegistro);
+  public enviarloggin() {
+    this.router.navigate(['/loggin']);
   }
 
   onKeyDown(event: any) {

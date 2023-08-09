@@ -1,0 +1,48 @@
+
+<h1>Mostrar habitaciones</h1>
+
+<div class="container-Card">
+    <p-card header="Habitación: {{item.habitacionCompoundKey.idhabitacion}}" subheader="información de la habitación" [style]="{ width: '360px' }"
+    *ngFor="let item of paginateHabitaciones" class="Card">
+        <ng-template pTemplate="header">
+            <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+        </ng-template>
+        
+        <p> 
+            <samp>Numero de la habitación:</samp>
+            {{item.habitacionCompoundKey.idhabitacion}}
+        </p>
+        <p>
+            <samp>Numero de baños:</samp>
+            {{item.numBanos}} 
+        </p>
+        <p>
+            <samp>Numero de camas:</samp>
+            {{item.numCamas}}
+        </p>
+        <p>
+            <samp>Capacidad:</samp>
+            {{item.capacidad}}
+        </p>
+        <p>
+            <samp>Tiene Cocina:</samp>
+            {{item.cocina}}
+        </p>
+        <p>
+            <samp>Precio:</samp>
+            {{item.precio}}
+        </p>
+
+        <ng-template pTemplate="footer">
+            <p-button label="Reservar" icon="pi pi-check"></p-button>
+        </ng-template>
+    </p-card>
+</div>
+
+<mat-paginator [length]="habitaciones.length"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="pageSizeOptions"
+              aria-label="Select page"
+              (page)="onPageChange($event)">
+</mat-paginator>
+

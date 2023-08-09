@@ -1,0 +1,16 @@
+.Card samp{
+    font-weight: bold;
+}
+
+.Card p{
+    margin-bottom: 20px;
+}
+p-card{
+    margin-right: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.container-Card{
+    display: flex;
+}

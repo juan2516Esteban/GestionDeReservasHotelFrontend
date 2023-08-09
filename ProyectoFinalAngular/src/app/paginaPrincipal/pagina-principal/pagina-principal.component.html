@@ -1,3 +1,9 @@
+<div *ngIf="userHotel !== undefined">
+    <div class="card flex justify-content-center">
+        <button #btn type="button" pButton icon="pi pi-bars" label="Show" (click)="menu.toggle($event)"></button>
+        <p-tieredMenu #menu [model]="items" [popup]="true"></p-tieredMenu>
+    </div>
+</div>
 <h1>Visualización de hoteles</h1>
 
 
@@ -33,6 +39,13 @@
         </samp>
        {{item.correoElectronico}}
     </p>
+
+    <section>
+        <div class="example-button-row">
+          <button mat-flat-button color="primary" 
+          (click)="verHabitaciones(item.idHotel)">Ver habitaciones</button>
+        </div>
+      </section>
 </p-card>
 
 <mat-paginator [length]="hoteles.length"
@@ -41,5 +54,7 @@
               aria-label="Select page"
               (page)="onPageChange($event)">
 </mat-paginator>
+
+<p>{{userHotel}}</p>
 
 

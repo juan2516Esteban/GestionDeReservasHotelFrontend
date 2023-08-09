@@ -5,6 +5,7 @@ import { RegistroUserComponent } from './registroUser/registro-user.component';
 import { CrearHotelComponent } from './moduloAdministrador/crear-hotel/crear-hotel.component';
 import { CrearHabitacionComponent } from './moduloAdministrador/crearHabitacion/crear-habitacion.component';
 import { PaginaPrincipalComponent } from './paginaPrincipal/pagina-principal/pagina-principal.component';
+import { ViewHabitacionesComponent } from './viewHabitaciones/view-habitaciones/view-habitaciones.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'paginaPrincipal',
     component: PaginaPrincipalComponent,
+  },
+  {
+    path: 'viewHabitaciones/:id',
+    component: ViewHabitacionesComponent,
   },
 ];
 

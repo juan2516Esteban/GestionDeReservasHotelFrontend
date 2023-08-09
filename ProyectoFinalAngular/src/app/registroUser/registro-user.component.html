@@ -43,8 +43,8 @@
                     <mat-form-field class="custom-mat-form-field" >
                         <mat-label>Tipo de Documento</mat-label>
                         <mat-select formControlName="tipoDeDocumento" disableRipple>
-                          <mat-option value="1">TI</mat-option >
-                          <mat-option value="2">CC</mat-option >
+                          <mat-option value="TI">TI</mat-option >
+                          <mat-option value="CC">CC</mat-option >
                         </mat-select> 
                     </mat-form-field>  
                 </tr></table>
@@ -63,7 +63,7 @@
         <p>{{longText}}</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button type="submit" (click)="enviarFormulario()" >Registrate</button>
+      <button mat-button type="submit" (click)="enviarFormulario()" [disabled]="registerUser.invalid">Registrate</button>
     </mat-card-actions>
   </mat-card>
   

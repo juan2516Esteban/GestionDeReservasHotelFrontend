@@ -24,7 +24,13 @@
             </mat-form-field>
         </form>
 
+        <div *ngIf="errorMessages" class="error">
+          <p>{{errorMessages}}</p>
+        </div>
+
         <p> {{longText}} </p>
+
+
     </mat-card-content>
 
     <mat-card-actions>
