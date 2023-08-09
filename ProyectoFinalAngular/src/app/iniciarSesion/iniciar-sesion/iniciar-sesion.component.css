@@ -6,10 +6,15 @@ mat-card {
 }
 .example-card {
     max-width: 400px;
-    background-color: gainsboro;
+    background-color: #375E97; 
     margin-bottom: 30px;
     border-radius: 15px;
   }
+
+.example-card button{
+  background-color:  #39A18A;
+}
+
   mat-card-header{
     text-align: center;
     margin-bottom: 15px;
@@ -39,11 +44,19 @@ mat-card {
   }
 
   .mat-icon{
-    color: blue;    
+    color: #375E97;   
   }
 
   mat-card-actions{
     margin: auto;
+  }
+
+  a{
+    text-decoration: none;
+    font-weight: bold;
+    size: 25px;
+    color: black;
+    margin-left: 8px;
   }
 
 
