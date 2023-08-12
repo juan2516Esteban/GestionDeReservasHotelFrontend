@@ -1,65 +1,71 @@
+<div class="container">
 
-<h1>Crear hoteles</h1>
+  <div class="div-Container">
+    <h1>Crear hoteles</h1>
 
 
-        <mat-form-field class="example-form-field" [formGroup]="fromHotel">
-            <mat-label>Id del hotel</mat-label>
-            <input matInput type="text" formControlName="idHotel">
-            <button *ngIf="fromHotel.get('idHotel')?.value" matSuffix mat-icon-button aria-label="Clear" 
-            (click)="fromHotel.get('idHotel')?.setValue('')">
-              <mat-icon>close</mat-icon>
-            </button>
-          </mat-form-field>
+            <mat-form-field class="example-form-field" [formGroup]="fromHotel">
+                <mat-label>Id del hotel</mat-label>
+                <input matInput type="text" formControlName="idHotel">
+                <button *ngIf="fromHotel.get('idHotel')?.value" matSuffix mat-icon-button aria-label="Clear" 
+                (click)="fromHotel.get('idHotel')?.setValue('')">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
 
-          <mat-form-field class="example-form-field" [formGroup]="fromHotel">
-            <mat-label>Nombre</mat-label>
-            <input matInput type="text" formControlName="nombreHotel">
-            <button *ngIf="fromHotel.get('nombreHotel')?.value" matSuffix mat-icon-button aria-label="Clear" 
-            (click)="fromHotel.get('nombreHotel')?.setValue('')">
-              <mat-icon>close</mat-icon>
-            </button>
-          </mat-form-field>
+              <mat-form-field class="example-form-field" [formGroup]="fromHotel">
+                <mat-label>Nombre</mat-label>
+                <input matInput type="text" formControlName="nombreHotel">
+                <button *ngIf="fromHotel.get('nombreHotel')?.value" matSuffix mat-icon-button aria-label="Clear" 
+                (click)="fromHotel.get('nombreHotel')?.setValue('')">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
 
-          <mat-form-field class="example-form-field" [formGroup]="fromHotel">
-            <mat-label>Numero de habitaciones</mat-label>
-            <input matInput type="text" (keydown)="onKeyDown($event)" formControlName="numeroDeHabitaciones">
-            <button *ngIf="fromHotel.get('numeroDeHabitaciones')?.value" matSuffix mat-icon-button aria-label="Clear" 
-            (click)="fromHotel.get('numeroDeHabitaciones')?.setValue('')">
-              <mat-icon>close</mat-icon>
-            </button>
-          </mat-form-field>
+              <mat-form-field class="example-form-field" [formGroup]="fromHotel">
+                <mat-label>Numero de habitaciones</mat-label>
+                <input matInput type="text" (keydown)="onKeyDown($event)" formControlName="numeroDeHabitaciones">
+                <button *ngIf="fromHotel.get('numeroDeHabitaciones')?.value" matSuffix mat-icon-button aria-label="Clear" 
+                (click)="fromHotel.get('numeroDeHabitaciones')?.setValue('')">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
 
-          <form [formGroup]="fromHotel">
-            <div class="card p-fluid flex flex-wrap gap-3">
-                <div class="flex-auto">
-                    <span class="font-bold block mb-2">Telefono</span>
-                    <p-inputMask mask="(999) 999-9999" placeholder="(999) 999-9999" formControlName="telefono"></p-inputMask>
+              <form [formGroup]="fromHotel">
+                <div class="card p-fluid flex flex-wrap gap-3">
+                    <div class="flex-auto">
+                        <span class="font-bold block mb-2">Telefono</span>
+                        <p-inputMask mask="(999) 999-9999" placeholder="(999) 999-9999" formControlName="telefono"></p-inputMask>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
 
-        <mat-form-field class="example-form-field" [formGroup]="fromHotel">
-            <mat-label>Dirección</mat-label>
-            <input matInput type="text" formControlName="direccion">
-            <button *ngIf="fromHotel.get('direccion')?.value" matSuffix mat-icon-button aria-label="Clear" 
-            (click)="fromHotel.get('direccion')?.setValue('')">
-              <mat-icon>close</mat-icon>
-            </button>
-          </mat-form-field>
-        
-          <mat-form-field class="example-form-field" [formGroup]="fromHotel">
-            <mat-label>Correo Electronico</mat-label>
-            <input matInput type="email" formControlName="correoElectronico">
-            <button *ngIf="fromHotel.get('correoElectronico')?.value" matSuffix mat-icon-button aria-label="Clear" 
-            (click)="fromHotel.get('correoElectronico')?.setValue('')">
-              <mat-icon>close</mat-icon>
-            </button>
-          </mat-form-field>
+            <mat-form-field class="example-form-field" [formGroup]="fromHotel">
+                <mat-label>Dirección</mat-label>
+                <input matInput type="text" formControlName="direccion">
+                <button *ngIf="fromHotel.get('direccion')?.value" matSuffix mat-icon-button aria-label="Clear" 
+                (click)="fromHotel.get('direccion')?.setValue('')">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            
+              <mat-form-field class="example-form-field" [formGroup]="fromHotel">
+                <mat-label>Correo Electronico</mat-label>
+                <input matInput type="email" formControlName="correoElectronico">
+                <button *ngIf="fromHotel.get('correoElectronico')?.value" matSuffix mat-icon-button aria-label="Clear" 
+                (click)="fromHotel.get('correoElectronico')?.setValue('')">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
 
-         
-          <div class="example-button-row">
-            <button mat-raised-button color="primary"  [ngClass]="{'dissabled': fromHotel.invalid }"
-            (click)="enviarFormulario()">Primary</button>
-          </div>
-         
-       
+            
+              <div class="example-button-row">
+                <button mat-raised-button color="primary"  [ngClass]="{'dissabled': fromHotel.invalid }"
+                (click)="enviarFormulario()">Primary</button>
+              </div>
+  </div>   
+  
+  <div class="imagen">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Pleiades_large.jpg/800px-Pleiades_large.jpg" alt="no hay imagen">
+  </div>
+</div>        

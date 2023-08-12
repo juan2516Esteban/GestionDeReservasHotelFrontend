@@ -32,6 +32,10 @@ const routes: Routes = [
     path: 'viewHabitaciones/:id',
     component: ViewHabitacionesComponent,
   },
+  {
+    path: '',
+    component: IniciarSesionComponent,
+  },
 ];
 
 @NgModule({

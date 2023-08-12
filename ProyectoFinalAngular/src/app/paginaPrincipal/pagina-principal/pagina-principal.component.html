@@ -1,52 +1,55 @@
-<div *ngIf="userHotel !== undefined">
+<div *ngIf="userHotel !== undefined" class="menu">
     <div class="card flex justify-content-center">
         <button #btn type="button" pButton icon="pi pi-bars" label="Show" (click)="menu.toggle($event)"></button>
         <p-tieredMenu #menu [model]="items" [popup]="true"></p-tieredMenu>
     </div>
 </div>
+
+
 <h1>Visualización de hoteles</h1>
 
+<div class="container-card">
+    <p-card *ngFor="let item of paginatedHoteles" header={{item.nombreHotel}} >
+        
+        <p class="m-0">
+            <samp>
+            Dirección:
+            </samp>
+        {{item.direccion}}
+        </p>
+        <p class="m-0">
+            <samp>
+            Numero de habitaciones:
+            </samp>
+        {{item.numeroDeHabitaciones}}
+        </p>
+        <p class="m-0">
+            <samp>
+            Capacidad de reservas:
+            </samp>
+        {{item.capacidadDeReservas}}
+        </p>
+        <p class="m-0">
+            <samp>
+            Telefono:
+            </samp>
+        {{item.telefono}}
+        </p>
+        <p class="m-0">
+            <samp>
+                Correo electronico:
+            </samp>
+        {{item.correoElectronico}}
+        </p>
 
-<p-card *ngFor="let item of paginatedHoteles" header={{item.nombreHotel}} >
-    
-    <p class="m-0">
-        <samp>
-        Dirección:
-        </samp>
-       {{item.direccion}}
-    </p>
-    <p class="m-0">
-        <samp>
-        Numero de habitaciones:
-        </samp>
-       {{item.numeroDeHabitaciones}}
-    </p>
-    <p class="m-0">
-        <samp>
-        Capacidad de reservas:
-        </samp>
-       {{item.capacidadDeReservas}}
-    </p>
-    <p class="m-0">
-        <samp>
-        Telefono:
-        </samp>
-       {{item.telefono}}
-    </p>
-    <p class="m-0">
-        <samp>
-            Correo electronico:
-        </samp>
-       {{item.correoElectronico}}
-    </p>
-
-    <section>
-        <div class="example-button-row">
-          <button mat-flat-button color="primary" 
-          (click)="verHabitaciones(item.idHotel)">Ver habitaciones</button>
-        </div>
-      </section>
-</p-card>
+        <section>
+            <div class="example-button-row">
+            <button mat-flat-button color="primary" 
+            (click)="verHabitaciones(item.idHotel)">Ver habitaciones</button>
+            </div>
+        </section>
+    </p-card>
+</div>
 
 <mat-paginator [length]="hoteles.length"
               [pageSize]="pageSize"
@@ -55,6 +58,6 @@
               (page)="onPageChange($event)">
 </mat-paginator>
 
-<p>{{userHotel}}</p>
+
 
 

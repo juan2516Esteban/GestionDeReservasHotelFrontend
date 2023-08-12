@@ -2,8 +2,8 @@
 <h1>Mostrar habitaciones</h1>
 
 <div class="container-Card">
-    <p-card header="Habitación: {{item.habitacionCompoundKey.idhabitacion}}" subheader="información de la habitación" [style]="{ width: '360px' }"
-    *ngFor="let item of paginateHabitaciones" class="Card">
+    <p-card header="Habitación: {{item.habitacionCompoundKey.idhabitacion}}" subheader="información de la habitación" 
+    *ngFor="let item of paginateHabitaciones">
         <ng-template pTemplate="header">
             <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
         </ng-template>
@@ -41,7 +41,7 @@
 
 <mat-paginator [length]="habitaciones.length"
               [pageSize]="pageSize"
-              [pageSizeOptions]="pageSizeOptions"
+              [pageSizeOptions]="pageSizeOptions" 
               aria-label="Select page"
               (page)="onPageChange($event)">
 </mat-paginator>

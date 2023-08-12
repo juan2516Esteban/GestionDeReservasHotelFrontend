@@ -55,7 +55,7 @@ export class PaginaPrincipalComponent implements OnInit {
 
   /* variables para el paginador */
   public pageSize = 3;
-  public pageSizeOptions = [3, 5, 10];
+  public pageSizeOptions = [1, 2, 3];
   public paginatedHoteles!: any[];
 
   /* función para el paginador */

@@ -6,11 +6,29 @@
     margin-bottom: 20px;
 }
 p-card{
+    display: flex;
     margin-right: 30px;
     margin-top: 30px;
     margin-bottom: 30px;
+    height: 550px;
+    width: 500px;
 }
 
 .container-Card{
+    align-items: stretch;
     display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    height: 650px;
+    padding: 20px;
+    width: 1200px;
+    background-color: aqua;
 }
+
+h1{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
